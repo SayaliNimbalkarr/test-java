@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Echo a build message
+                echo 'Building the project...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Echo a test message
+                echo 'Running tests...'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline executed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
