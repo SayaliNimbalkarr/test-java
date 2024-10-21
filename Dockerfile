@@ -1,8 +1,8 @@
-#STEP1 sepcify the base image
-FROM alpine
+# STEP 1: Specify the base image
+FROM alpine:latest
 
-#STEP2 download and install dependencies 
-RUN apk add --update redis
+# STEP 2: Download and install dependencies
+RUN apk add --no-cache redis
 
-#STEP3 setup the strtup command
+# STEP 3: Setup the startup command
 CMD ["redis-server"]
